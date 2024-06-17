@@ -1,0 +1,116 @@
+Requirements Analysis for Contact Page Test Suite
+
+1. Project Overview
+
+    Purpose:
+    The purpose of this test suite is to validate the functionality and design of the contact page of a web application. It aims to ensure that all elements and features of the contact page are working as expected.
+
+2. Functional Requirements
+
+    Description:
+    The contact page should meet specific criteria regarding the presence and behavior of various elements. These criteria include:
+
+        Navbar Brand:
+            - There should be exactly one navbar brand element.
+            - The navbar brand text should be "Shazada".
+
+        Navbar Links:
+            - The navbar should have at least three anchor tags.
+            - The navbar links should include "Home", "Products", and "Contact".
+
+        Navbar Background Color:
+            - The background color of the navbar should be `rgb(13, 110, 253)`.
+
+        Heading:
+            - The page should contain a heading with the text "Contact Us".
+            - The heading should be an `<h1>`, `<h2>`, or `<h3>` element.
+
+        Social Media Links:
+            - The page should have links to GitLab, GitHub, LinkedIn, and Facebook.
+
+        Google Fonts:
+            - The page should use Google Fonts.
+
+        Contact Form:
+            - The page should have at least one contact form.
+            - The contact form should include text input fields, email input fields, and a textarea.
+
+3. Technical Requirements
+
+    Dependencies:
+    - `selenium-webdriver`: Used for browser automation.
+    - `selenium-webdriver/firefox`: Provides Firefox-specific configurations.
+    - `fs`: Node.js package for file system operations.
+    - `chai`: Assertion library for test validation.
+
+    Environment:
+    - Node.js environment required for running the test suite.
+    - Firefox browser used for headless testing.
+    
+4. Acceptance Criteria
+
+    Test Cases:
+
+    1. Page Has Navbar Brand:
+        - Acceptance Criteria:
+        - The test should pass if the page contains exactly one navbar brand.
+
+    2. Page Has Navbar Brand with text Shazada:
+        - Acceptance Criteria:
+        - The test should pass if the page contains a navbar brand element with the text "Shazada".
+
+    3. Navbar Links Existence:
+        - Acceptance Criteria:
+        - The test should pass if the navbar contains at least three anchor tags.
+    
+    4. Navbar Links Existence with correct text:
+        - Acceptance Criteria:
+        - The test should pass if the navbar contains the appropriate links.
+
+    5. Navbar Background Color:
+        - Acceptance Criteria:
+        - The test should pass if the navbar background color is `rgb(13, 110, 253)`.
+
+    6. Heading with text "Contact Us" exists.:
+        - Acceptance Criteria:
+        - The test should pass if the page contains a heading with the text "Contact Us", and it is either an `<h1>`, `<h2>`, or `<h3>` element.
+
+    7. Heading with text "Contact Us" is h1, h2, or h3 element.:
+        - Acceptance Criteria:
+        - The test should pass if the page contains a heading with the text "Contact Us", and it is either an `<h1>`, `<h2>`, or `<h3>` element.
+
+    8. Link to LinkedIn Exists:
+        - Acceptance Criteria:
+        - The test should pass if there is a link to LinkedIn present on the page.
+
+    9. Link to Facebook Exists:
+        - Acceptance Criteria:
+        - The test should pass if there is a link to Facebook present on the page.
+
+    10. Contact Form Existence:
+        - Acceptance Criteria:
+        - The test should pass if the page contains at least one contact form with appropriate input fields.
+
+    11. Contact Form Text Input:
+        - Acceptance Criteria:
+        - The test should pass if the contact form includes at least one text input field.
+
+    12. Contact Form Email Input:
+        - Acceptance Criteria:
+        - The test should pass if the contact form includes at least one email input field.
+
+    13. Contact Form Textarea:
+        - Acceptance Criteria:
+        - The test should pass if the contact form includes at least one textarea field.
+
+    14. Contact Form Submit Button:
+        - Acceptance Criteria:
+        - The test should pass if the contact form includes a submit button.
+
+
+5. Constraints and Assumptions
+
+    - The test suite assumes that the contact page is a static HTML page located in the `src` directory.
+    - All tests are performed in a headless Firefox browser environment.
+    - The correctness of the tests relies on the accuracy of element selectors and expected values.
+    - The development and testing are limited by available time and resources.

@@ -1,0 +1,68 @@
+Test Plan: Contact Page Test Suite
+
+1. Test Objectives and Scope
+
+   - Objective: 
+     - Validate the functionality and user interface (UI) elements of the contact page using Selenium WebDriver.
+
+   - Scope:
+     - This test plan encompasses the verification of UI components and functional aspects of the contact page, ensuring elements such as navigation bar, headings, links, and form inputs are correctly implemented.
+
+2. Testing Approach
+
+   - Approach:
+     - Conduct automated white-box testing using Selenium WebDriver and Chai assertions to validate the behavior and appearance of the contact page.
+
+3. Test Cases
+
+   - Navigation Bar:
+     1. Test Case 1: Page has 1 navbar brand
+        - Ensure that the contact page contains exactly one navbar brand element.
+     2. Test Case 2: Navbar brand text is "Shazada"
+        - Verify that the text of the navbar brand is "Shazada".
+     3. Test Case 3: Page navbar should have at least 3 anchor tags
+        - Confirm that the navigation bar contains at least three anchor tags.
+     4. Test Case 4: Navbar tags include Home, Products, and About
+        - Validate that the navigation bar contains links to Home, Products, and About sections.
+     5. Test Case 5: Page navbar background color is rgb(13, 110, 253)
+        - Ensure that the background color of the navigation bar matches the specified RGB value.
+
+   - Styling and Layout:
+
+     6. Test Case 6: Page contains a heading with text "Contact Us"
+        - Verify the presence of a heading with the text "Contact Us".
+     7. Test Case 7: Element with "Contact" text is an h1, h2, or h3
+        - Confirm that the element containing "Contact" text is either an h1, h2, or h3 heading.
+
+   - Links and Forms:
+     8. Test Case 8: Page has link to Facebook
+        - Ensure that there is a link to Facebook on the contact page.
+     9. Test Case 9: Page has link to LinkedIn
+        - Verify the presence of a link to LinkedIn on the contact page.
+     10. Test Case 10: Page has a contact form
+         - Confirm the existence of at least one contact form on the page.
+     11. Test Case 11: Page has a contact form text input
+         - Validate the presence of text input fields within the contact form.
+     12. Test Case 12: Page has a contact form email input
+         - Ensure the availability of email input fields in the contact form.
+     13. Test Case 13: Page has a contact form textarea
+         - Confirm the presence of a textarea element within the contact form.
+     14. Test Case 14: Page has a submit button
+         - Validate the existence of a submit button within the contact form.
+
+4. Test Environment
+
+   - Environment:
+     - Utilize a testing environment equipped with Selenium WebDriver, Mocha framework, Chai assertion library, and Node.js for executing automated UI tests.
+
+5. Execution and Reporting
+
+   - Execution:
+     - Execute the test cases using Mocha framework integrated with Selenium WebDriver to interact with and validate the contact page's UI components.
+   - Reporting:
+     - Utilize Mocha Reporter to log test results, including the pass/fail status, in a structured format for analysis and debugging.
+
+6. Schedule
+
+   - Timeline:
+     - Conduct UI testing parallel to the development phase, ensuring continuous integration with each build and pre-release testing before major deployments.
