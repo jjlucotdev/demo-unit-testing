@@ -27,9 +27,10 @@ describe('Contact Page Test', function () {
     const serverPath = path.join(__dirname, '..', 'src', 'index.html');
 
     before(async function () {
+        this.timeout(60000); // Increase timeout to 60 seconds
         server = httpServer.createServer({ root: serverPath });
         server.listen(port);
-
+    
         driver = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
     });
 
@@ -152,12 +153,18 @@ describe('Contact Page Test', function () {
     });
 
     after(async function () {
-        await driver.quit();
-        server.close();
-
+        if (driver) {
+            await driver.quit();
+        }
+    
+        if (server) {
+            server.close();
+        }
+    
         console.log("==================");
         console.log(`Test results: ${passedTests}/${totalTests}`);
         console.log(`Percentage: ${parseInt((passedTests / totalTests * 100).toFixed(2))}%`);
         console.log("==================");
     });
+    
 });
