@@ -24,7 +24,7 @@ describe('Contact Page Test', function () {
     options.setPreference('browser.download.manager.showWhenStarting', false);
     options.setPreference('browser.download.manager.useWindow', false);
 
-    const serverPath = path.join(__dirname, '..', 'src');
+    const serverPath = path.join(__dirname, '..', 'src', 'index.html');
 
     before(async function () {
         server = httpServer.createServer({ root: serverPath });
