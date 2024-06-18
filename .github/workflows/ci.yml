@@ -22,4 +22,20 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm install http-server --save-dev
-      - run: npm test
+      
+      # Start the HTTP server
+      - name: Start HTTP Server
+        run: |
+          npx http-server ./src -p 8080 &
+        shell: bash
+
+      # Run tests
+      - name: Run Tests
+        run: npm test
+      
+      # Stop the HTTP server (This will run even if the previous steps fail)
+      - name: Stop HTTP Server
+        if: always()
+        run: |
+          kill $(lsof -t -i:8080)
+        shell: bash
