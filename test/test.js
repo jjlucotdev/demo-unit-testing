@@ -4,7 +4,6 @@ const chai = require('chai');
 const { expect } = chai;
 const path = require('path');
 const httpServer = require('http-server');
-const fetch = require('node-fetch');
 
 let totalTests = 0;
 let passedTests = 0;
@@ -45,7 +44,8 @@ describe('Contact Page Test', function () {
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 5 seconds
 
         console.log('Checking server availability...');
-        const response = await fetch(serverUrl);
+        const fetch = await import('node-fetch');
+        const response = await fetch.default(serverUrl);
         if (response.ok) {
             console.log('Server is available');
         } else {
