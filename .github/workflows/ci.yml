@@ -23,11 +23,13 @@ jobs:
       - run: npm install
       - run: npm install http-server --save-dev
 
-      # Install Firefox and Geckodriver
+      # Install Firefox
       - name: Install Firefox
         run: choco install firefox --version=102.0 -y
+
+      # Install Geckodriver using npm
       - name: Install Geckodriver
-        run: choco install selenium-geckodriver --version=0.30.0 -y
+        run: npm install geckodriver --save-dev
 
       # Start the HTTP server
       - name: Start HTTP Server
@@ -38,7 +40,7 @@ jobs:
       # Run tests
       - name: Run Tests
         run: npm test
-      
+
       # Stop the HTTP server (This will run even if the previous steps fail)
       - name: Stop HTTP Server
         if: always()
