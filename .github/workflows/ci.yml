@@ -22,7 +22,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm install http-server --save-dev
-      
+
+      # Install Firefox and Geckodriver
+      - name: Install Firefox
+        run: choco install firefox --version=102.0 -y
+      - name: Install Geckodriver
+        run: choco install selenium-geckodriver --version=0.30.0 -y
+
       # Start the HTTP server
       - name: Start HTTP Server
         run: |

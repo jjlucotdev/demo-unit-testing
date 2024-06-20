@@ -63,16 +63,6 @@ describe('Contact Page Test', function () {
         }
     });
 
-    beforeEach(function () {
-        totalTests++;
-    });
-
-    afterEach(function () {
-        if (this.currentTest.state === 'passed') {
-            passedTests++;
-        }
-    });
-
     it('Page has 1 navbar brand', async function () {
         console.log('Starting test: Page has 1 navbar brand');
         await driver.get(`${serverUrl}/index.html`);
