@@ -74,12 +74,14 @@ describe('Contact Page Test', function () {
     });
 
     it('Page has 1 navbar brand', async function () {
+        console.log('Starting test: Page has 1 navbar brand');
         await driver.get(`${serverUrl}/index.html`);
         const navbarBrandElements = await driver.findElements(By.css('.navbar-brand'));
         expect(navbarBrandElements).to.have.lengthOf(1);
     });
 
     it('Navbar brand text is "Shazada"', async function () {
+        console.log('Starting test: Navbar brand text is "Shazada"');
         await driver.get(`${serverUrl}/index.html`);
         const navbarBrandElement = await driver.findElement(By.css('.navbar-brand'));
         const brandText = await navbarBrandElement.getText();
@@ -87,12 +89,14 @@ describe('Contact Page Test', function () {
     });
 
     it('Page navbar should have at least 3 anchor tags', async function () {
+        console.log('Starting test: Page navbar should have at least 3 anchor tags');
         await driver.get(`${serverUrl}/index.html`);
         const navbarAnchors = await driver.findElements(By.css('.navbar a'));
         expect(navbarAnchors.length).to.be.at.least(3);
     });
 
     it('Navbar tags include Home, Products, and About', async function () {
+        console.log('Starting test: Navbar tags include Home, Products, and About');
         await driver.get(`${serverUrl}/index.html`);
         let navlinksText = [];
         const navlinks = await driver.findElements(By.css('.navbar a'));
@@ -111,6 +115,7 @@ describe('Contact Page Test', function () {
     });
 
     it('Page navbar background color is rgb(13, 110, 253)', async function () {
+        console.log('Starting test: Page navbar background color is rgb(13, 110, 253)');
         await driver.get(`${serverUrl}/index.html`);
         const navbar = await driver.findElement(By.css('.navbar'));
         const backgroundColor = await navbar.getCssValue('background-color');
@@ -118,12 +123,14 @@ describe('Contact Page Test', function () {
     });
 
     it('Page contains a heading with text "Contact Us"', async function () {
+        console.log('Starting test: Page contains a heading with text "Contact Us"');
         await driver.get(`${serverUrl}/index.html`);
         const heading = await driver.findElements(By.xpath('//*[contains(text(), "Contact Us")]'));
         expect(heading).to.exist;
     });
 
     it('Page check if element with Contact Us text is an h1, h2, or h3', async function () {
+        console.log('Starting test: Page check if element with Contact Us text is an h1, h2, or h3');
         await driver.get(`${serverUrl}/index.html`);
         const heading = await driver.findElement(By.xpath('//*[contains(text(), "Contact Us")]'));
 
@@ -138,6 +145,7 @@ describe('Contact Page Test', function () {
     });
 
     it('Page has link to Facebook', async function () {
+        console.log('Starting test: Page has link to Facebook');
         await driver.get(`${serverUrl}/index.html`);
         const link = await driver.findElement(By.xpath('//a[contains(@href, "facebook")]'));
 
@@ -145,6 +153,7 @@ describe('Contact Page Test', function () {
     });
 
     it('Page has link to LinkedIn', async function () {
+        console.log('Starting test: Page has link to LinkedIn');
         await driver.get(`${serverUrl}/index.html`);
         const link = await driver.findElement(By.xpath('//a[contains(@href, "linkedin")]'));
 
@@ -152,43 +161,50 @@ describe('Contact Page Test', function () {
     });
 
     it('Page has a contact form', async function () {
+        console.log('Starting test: Page has a contact form');
         await driver.get(`${serverUrl}/index.html`);
         const contactForms = await driver.findElements(By.css('form'));
         expect(contactForms.length).to.be.at.least(1);
     });
 
     it('Page has a contact form text input', async function () {
+        console.log('Starting test: Page has a contact form text input');
         await driver.get(`${serverUrl}/index.html`);
         const textInput = await driver.findElements(By.xpath('//input[contains(@type,"text")]'));
         expect(textInput.length).to.be.at.least(1, 'No contact form text input type found on the page');
     });
 
     it('Page has a contact form email input', async function () {
+        console.log('Starting test: Page has a contact form email input');
         await driver.get(`${serverUrl}/index.html`);
         const textInput = await driver.findElements(By.xpath('//input[contains(@type,"email")]'));
         expect(textInput.length).to.be.at.least(1, 'No contact form text input type found on the page');
     });
 
     it('Page has a contact form text field', async function () {
+        console.log('Starting test: Page has a contact form text field');
         await driver.get(`${serverUrl}/index.html`);
         const textInput = await driver.findElements(By.css('textarea'));
         expect(textInput.length).to.be.at.least(1, 'No contact form text input type found on the page');
     });
 
     it('Page has a submit button', async function () {
+        console.log('Starting test: Page has a submit button');
         await driver.get(`${serverUrl}/index.html`);
         const submitButtons = await driver.findElements(By.xpath('//button[contains(@type,"submit")]'));
         expect(submitButtons.length).to.be.at.least(1, 'No submit button found on the page');
     });
 
     after(async function () {
+        console.log('Stopping HTTP server...');
         if (driver) {
             await driver.quit();
         }
 
         if (server) {
-            server.close();
-            console.log('HTTP server stopped');
+            server.close(() => {
+                console.log('HTTP server stopped');
+            });
         }
 
         console.log("==================");
